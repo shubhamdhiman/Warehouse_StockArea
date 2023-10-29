@@ -1,0 +1,24 @@
+.navbar{
+    display:flex;
+    justify-content: space-between;
+    background-color:rgb(233, 233, 233);
+    height:100px;
+    align-items: center;
+}
+.logo{
+    margin-left:2rem;
+}
+.searchBar{
+    margin-right:2rem;
+}
+
+input[type="text"]{
+    padding:.6rem .8rem;
+    font-size:1.2rem;
+    font-family: 'Poppins', sans-serif;
+    transition: all .5s ease-in-out;
+}
+input[type="text"]:focus{
+    border-radius:2rem;
+    outline:green;
+}

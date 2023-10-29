@@ -1,0 +1,139 @@
+.storeCard-button{
+ width: 400px;
+ border-radius:1rem;
+ border-color: transparent;
+ outline-style: solid;
+ background-color: white;
+ padding:1rem;
+ margin:1rem;
+cursor:pointer;
+transition:.2s ease-in-out;
+}
+.storeCard-button:hover{
+    transform: scale(1.05);
+}
+.storeCard-locationStatus{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.city{
+    margin:0;
+    font-size:1.01rem;
+}
+.city i{
+    font-size:1.01rem;
+    margin-right:5px;
+    
+}
+
+.status{
+    margin:0;
+    font-size:1.01rem;
+    display:flex;
+    align-items: center;
+}
+.status p{
+    margin:0;
+    margin-right:4px;
+    font-weight: 600;
+}
+.status .statusClose{
+    width:15px;
+    height:15px;
+    border-radius: 50%;
+    background-color: red;
+}
+.status .statusLive{
+    width:15px;
+    height:15px;
+    border-radius: 50%;
+    background-color: rgb(0, 156, 16);
+    animation: live .5s infinite alternate;
+}
+@keyframes live {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+.storeCard_name{
+    text-align: left;
+    font-size:1.2rem;
+    margin:0 0 .5rem 0;
+    font-weight:600;
+}
+.storeCard_space{
+    font-size:1.1rem;
+    text-align:left;
+}
+.storeCard_space span{
+    font-weight:600;
+}
+.storeCard_buttonSection{
+    display:flex;
+    justify-content: space-between;
+    margin-top:.8rem;
+}
+
+.addButton , .detailsButton{
+    padding:.4rem .8rem;
+    font-size:1.1rem;
+    cursor:pointer;
+    transition: all .2s ease-in-out;
+    border:none;
+    border-radius:.5rem;
+    outline:2px solid rgb(206, 206, 206);
+}
+.addButton{
+    background-color: rgb(181, 183, 255);
+}
+.addButton:hover, .detailsButton:hover{
+    border-radius:0;
+    transform: scale(1.05);
+}
+
+.modal{
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background-color: rgb(255, 255, 255);
+    padding:1rem 2rem;
+    border-radius: .5rem;
+    z-index:99;
+}
+.modal_content{
+    display:flex;
+    flex-direction: column;
+}
+.closeButton, .addData{
+    padding:.8rem 1.4rem;
+    font-size:1.1rem;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+    color:black;
+    border:none;
+    border-radius:1rem;
+    margin-left:.5rem;
+}
+.closeButton{
+    background-color: rgb(255, 137, 137);
+}
+.addData{
+    background-color: rgb(171, 255, 171);
+}
+.closeButton:hover, .addData:hover{
+    border-radius: 0;
+}
+.overlay{
+    position:fixed;
+    background-color: gray;
+    width: 100%;
+    height:100vh;
+    top:0;
+    z-index:9;
+    opacity: .7;
+}

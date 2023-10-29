@@ -1,0 +1,40 @@
+.storeContainer{
+    display:flex;
+    justify-content: center;
+    margin-top:4rem;    
+    background-color: white;
+    /* height: calc(100vh - 100px); */
+}
+.storeContainer .block{
+    width:500px;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 5px gray;
+    padding:1rem;
+    
+}
+.backButton{
+    background-color:rgb(255, 182, 182);
+    border:none;
+    font-size:1.2rem;
+    cursor: pointer;
+    padding: .6rem 1.2rem;
+    border-radius: .5rem;
+}
+.detailsContainer{
+
+    padding:1rem;
+}
+.detailsContainer div{
+    display: flex;
+    justify-content: space-between
+    ;
+}
+.detailsContainer p{
+    margin:0;
+    font-size: 1.1rem;
+}
+.detailsContainer span{
+    font-size:1.2rem;
+    font-weight: 600;
+}

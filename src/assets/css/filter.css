@@ -1,0 +1,47 @@
+.filterSection{
+    display:flex;
+    justify-content: flex-end;
+    margin-top:1rem;
+    padding:.5rem 1rem;
+}
+.filter-items-container{
+    margin-right:2rem;
+}
+.filter-items{
+    display:flex;
+}
+.filter-item{
+    background-color: rgb(255, 173, 173);
+    color:black;
+    padding:.8rem 1.4rem;
+    font-size:1.1rem;
+    border-radius:1rem;
+    margin-right:1rem;
+}
+.filter-item-button{
+    background-color: transparent;
+    border:none;
+    cursor:pointer;
+    margin-left:5px;
+}
+.filter-button{
+    padding:.8rem 1.4rem;
+    font-size:1.1rem;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+    background-color: rgb(255, 47, 47);
+    color:black;
+}
+.filter-button:hover{
+    border-radius:2rem;
+
+}
+.dropdown{
+    margin-right:1rem;
+    padding:.8rem 1.4rem;
+    font-size:1.1rem;
+}
+.dropdown:focus{
+    border-radius:2rem;
+    transition: .2s ease-in-out;
+}
