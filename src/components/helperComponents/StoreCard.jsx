@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import "../../assets/css/store_card.css";
 import { useSelector, useDispatch } from "react-redux";
 import { updateWarehouse } from "../../store/actions/wareHouseActions";
+import {Toaster} from 'react-hot-toast'
+import { storeUpdated } from "../../utils/toastFile";
 function StoreCard({ store }) {
   const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -15,28 +17,28 @@ function StoreCard({ store }) {
 
 
   function addData(id) {
-    // Find the warehouse item by its id
+    // Finding the warehouse item by its id
     const warehouseToUpdate = warehouses.find((item) => item.id === parseInt(id));
   
-    // Ensure the warehouse item exists
+    // Ensuring the warehouse item exists
     if (warehouseToUpdate) {
-      // Create a copy of the found item and update the specific field
+      // Creating a copy of the found item and update the specific field
       const updatedItem = { ...warehouseToUpdate };
       updatedItem[formData.fieldName] = formData.fieldValue;
   
-      // Dispatch the updated item
+      // Dispatching the updated item
       dispatch(updateWarehouse(updatedItem));
+      storeUpdated(`${store.name} Value`)
     }
   
     setIsModalOpen(false);
     setFormData({ fieldName: "", fieldValue: "" });
   }
   
-
   function handleCardClick(id) {
-    console.log("clicked on card");
     navigate(`/storedetails/${id}`);
   }
+
   function handleAddClick(e) {
     e.stopPropagation();
     setIsModalOpen(true);
@@ -91,13 +93,12 @@ function StoreCard({ store }) {
       </button>
       {isModalOpen && (
         <>
-          <div className="overlay"></div> {/* Add an overlay div */}
+          <div className="overlay"></div> 
           <div className="modal">
             <div className="modal-content">
               <h2>Add Details</h2>
               <p>{store.name}</p>
 
-              {/* Additional form fields or content can be added here */}
               <input
                 type="text"
                 placeholder="Field Name"
@@ -124,6 +125,7 @@ function StoreCard({ store }) {
           </div>
         </>
       )}
+      <Toaster />
     </>
   );
 }

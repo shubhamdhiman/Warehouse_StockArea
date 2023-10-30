@@ -8,9 +8,7 @@ function Modal({ isOpen, onClose }) {
   return (
     <div className="modal">
       <div className="modal-content">
-        {/* Add your modal content here */}
         <h2>Add Details</h2>
-        {/* Additional form fields or content can be added here */}
         <button onClick={onClose}>Close</button>
       </div>
     </div>

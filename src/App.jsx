@@ -8,15 +8,19 @@ import StoreDetails from "./components/StoreDetails";
 import Navbar from "./components/helperComponents/Navbar";
 import loader from './assets/images/tube-spinner.svg'
 import './assets/css/App.css'
+
+
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch();
-  // const warehouses = useSelector((state) => state.warehouses);
-  // console.log(warehouses);
+  const [queryWarehouse,setQueryWareHouse] = useState([]) 
+  const [searchBarFlag,setSearchBarFlag] = useState(true)
+
+  // Using useEffect to fetch the data from the api
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await fetchWarehouseData(); // Use the data-fetching function
+        const data = await fetchWarehouseData(); // Using the data-fetching function
         dispatch(fetchWarehouses(data));
         setIsLoading(false);
       } catch (error) {
@@ -25,24 +29,23 @@ function App() {
       }
     };
 
-    fetchData(); // Call the fetchData function when the component using this hook mounts.
+    fetchData(); // Calling the fetchData function when the component using this hook mounts.
   }, [dispatch]);
 
   return (
     <>
-      <Navbar />
+      <Navbar setQueryWareHouse={setQueryWareHouse} searchBarFlag={searchBarFlag}/>
       {isLoading ? <div className="loaderDiv"><img src={loader} alt="Loading..." width={70} height={70} /></div> :
       <>
       
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/storedetails/:id" element={<StoreDetails />} />
+          <Route path="/" element={<Home queryWarehouse={queryWarehouse} setQueryWareHouse={setQueryWareHouse} setSearchBarFlag={setSearchBarFlag}/>} />
+          <Route path="/storedetails/:id" element={<StoreDetails setSearchBarFlag={setSearchBarFlag}/>} />
         </Routes>
       </Router>
       </>
 }
-      {/* You can render your application components here */}
     </>
   );
 }

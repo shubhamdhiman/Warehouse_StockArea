@@ -17,8 +17,19 @@ input[type="text"]{
     font-size:1.2rem;
     font-family: 'Poppins', sans-serif;
     transition: all .5s ease-in-out;
+   
 }
 input[type="text"]:focus{
+    border-radius:2rem;
+    outline:green;
+}
+input[type="number"]{
+    padding:.6rem .8rem;
+    font-size:1.2rem;
+    font-family: 'Poppins', sans-serif;
+    transition: all .5s ease-in-out;
+}
+input[type="number"]:focus{
     border-radius:2rem;
     outline:green;
 }

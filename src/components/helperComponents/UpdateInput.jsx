@@ -3,7 +3,7 @@ import React from "react";
 import "../../assets/css/updateInput.css";
 
 function UpdateInput({ data, val, updateData, setUpdatedData }) {
-  // Define a local state to manage the input value
+  // Defining a local state to manage the input value
   const [inputValue, setInputValue] = React.useState(data);
 
 
@@ -12,7 +12,7 @@ const handleInputChange = (e) => {
     setInputValue(newValue);
   
     if (val === "is_live") {
-      // Handle the is_live update separately
+      // Handling the is_live update separately
       if(newValue==""){
         return
       }
@@ -22,7 +22,7 @@ const handleInputChange = (e) => {
         setUpdatedData({ ...updateData, is_live: false });
       }
     } else {
-      // For other fields, update them as usual
+      // For other fields, updating them as usual
       setUpdatedData({ ...updateData, [val]: newValue });
     }
   };
@@ -38,7 +38,7 @@ const handleInputChange = (e) => {
         </select>
       ) : (
         <input
-          type="text"
+          type={val==="space_available"?"number":"text"}
           name="fieldValue"
           value={inputValue}
           style={{ margin: ".5rem" }}
