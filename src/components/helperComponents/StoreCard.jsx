@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { updateWarehouse } from "../../store/actions/wareHouseActions";
 import {Toaster} from 'react-hot-toast'
 import { storeUpdated } from "../../utils/toastFile";
+
 function StoreCard({ store }) {
   const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
